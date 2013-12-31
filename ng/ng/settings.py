@@ -80,3 +80,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+TEMPLATE_DIRS = (
+    # for production, point at client-src/dist/ instead of client-src/app/
+    os.path.join(BASE_DIR, 'ng', 'client-src', 'app'),
+)
