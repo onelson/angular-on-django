@@ -36,3 +36,10 @@ nosetests.xml
 .pydevproject
 .idea
 *.iml
+
+# js/node related stuff (see **/client-src/.gitignore)
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
