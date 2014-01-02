@@ -1,0 +1,8 @@
+/* angular will decorate inputs with these classes to indicate validity */
+select.ng-invalid,
+textarea.ng-invalid,
+input.ng-invalid {
+    /* if you're using bootstrap less, you can
+       use @brand-danger for the color here */
+    border: 1px solid #843534;
+}

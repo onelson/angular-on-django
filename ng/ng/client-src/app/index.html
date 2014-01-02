@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/forms.css">
     <!-- endbuild -->
   </head>
   <body ng-app="demoApp">
@@ -29,9 +30,8 @@
     <div class="container" >
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
+          <li><a ng-href="./#/posts">Posts</a></li>
+          <li><a ng-href="./#/posts/new">New Post</a></li>
         </ul>
         <h3 class="text-muted">Demo App</h3>
       </div>
@@ -69,6 +69,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/article-list.js"></script>
+        <script src="scripts/controllers/article-edit.js"></script>
         <!-- endbuild -->
 </body>
 </html>
