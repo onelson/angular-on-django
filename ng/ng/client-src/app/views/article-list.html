@@ -1,6 +1,8 @@
 <ul class="list">
   <li ng-repeat="article in articles">
     <a ng-href="./#/posts/edit/{{ article.id }}">{{ article.title }}</a>
+    {{ article._author }}
+    {{ article.published | date:'short' }}
     <!-- TODO: category list directive here -->
   </li>
 </ul>
