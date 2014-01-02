@@ -3,7 +3,7 @@ from django.db import models
 
 class Category(models.Model):
     title = models.TextField(max_length=80)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
 
     def __unicode__(self):
         return self.title
@@ -19,8 +19,8 @@ class Article(models.Model):
     body = models.TextField()
     categories = models.ManyToManyField(Category, related_name='articles')
     published = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=200, unique=True)
     title = models.CharField(max_length=200)
-    slug = models.SlugField()
 
     def __unicode__(self):
         return self.title
