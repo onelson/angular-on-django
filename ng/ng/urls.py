@@ -9,11 +9,12 @@ from django.views.generic import TemplateView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'ng.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
+    # the articles app provides REST API content from api/ - we could have an
+    # article-specific prefix here if we want, but for this example the api
+    # will be at /api/...
+    url(r'^', include('articles.urls')),
+    # This view bootstraps the angular app
     url(r'^$', TemplateView.as_view(template_name='index.html'))
 )
 

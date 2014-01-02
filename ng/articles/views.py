@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from . import serializers
+from . import models
 
-# Create your views here.
+
+class CategoryViewSet(ModelViewSet):
+    model = models.Category
+    serializer_class = serializers.CategorySerializer
+
+
+class ArticleViewSet(ModelViewSet):
+    model = models.Category
+    serializer_class = serializers.ArticleSerializer
