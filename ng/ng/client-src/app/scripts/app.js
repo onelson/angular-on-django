@@ -8,11 +8,13 @@ angular.module('demoApp', [
 ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/posts', {
+        templateUrl: 'views/article-list.html',
+        controller: 'ArticleListCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        // since I don't have a landing page or whatever, I'm redirecting
+        // unmatched routes to the article list
+        redirectTo: '/posts'
       });
   });
