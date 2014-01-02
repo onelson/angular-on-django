@@ -5,6 +5,14 @@ class Category(models.Model):
     title = models.TextField(max_length=80)
     slug = models.SlugField()
 
+    def __unicode__(self):
+        return self.title
+
+    __str__ = __unicode__
+
+    def __repr__(self):
+        return '<Category %d: %s>' % (self.pk, self.slug)
+
 
 class Article(models.Model):
     author = models.ForeignKey('auth.User', related_name='articles')
@@ -13,3 +21,11 @@ class Article(models.Model):
     published = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200)
     slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.title
+
+    __str__ = __unicode__
+
+    def __repr__(self):
+        return '<Article %d: %s>' % (self.pk, self.slug)

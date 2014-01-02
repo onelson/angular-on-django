@@ -10,5 +10,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.ModelSerializer):
 
+    _categories = CategorySerializer(source='categories', read_only=True)
+
     class Meta:
         model = models.Article
