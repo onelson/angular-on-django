@@ -6,3 +6,7 @@ input.ng-invalid {
        use @brand-danger for the color here */
     border: 1px solid #843534;
 }
+
+form textarea[name=body] {
+    height: 140px;
+}

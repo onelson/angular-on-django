@@ -1,39 +1,45 @@
 <form name="articleForm" ng-submit="submit()">
   <input type="hidden" ng-model="article.author">
-  <div class="form-group">
+  <div form-group input="articleForm.title" label="Title">
     <input
         type="text"
-        placeholder="Title"
+        name="title"
         ng-model="article.title"
         ng-maxlength="200"
         required
         class="form-control"/>
   </div>
-  <div class="form-group">
+  <div form-group input="articleForm.slug" label="Slug">
     <input
         type="text"
-        placeholder="Slug"
+        name="Slug"
         ng-model="article.slug"
         ng-maxlength="200"
         required
         class="form-control"/>
   </div>
-  <div class="form-group">
+  <div form-group input="articleForm.body">
     <textarea
         ng-model="article.body"
+        name="body"
         required
         class="form-control"></textarea>
   </div>
-  <div class="form-group">
+  <div form-group input="articleForm.categories" label="Categories">
     <select
       ng-model="article.categories"
+      name="categories"
       required
       ng-options="cat.id as cat.title for cat in categories"
       multiple
       class="form-control"></select>
   </div>
   <div class="form-group">
-    <input type="submit" class="form-control btn btn-primary"/>
+    <input
+        type="submit"
+        class="btn btn-primary"
+        ng-disabled="articleForm.$invalid"
+        value="Save"/>
+    <a href="./#/posts" class="btn btn-default">Cancel</a>
   </div>
-
 </form>

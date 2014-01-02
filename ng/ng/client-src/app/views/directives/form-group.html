@@ -1,0 +1,7 @@
+<div ng-class="{'form-group': true, 'has-error': input.$error.length}">
+  <label class="control-label" for="input.$name" ng-show="label">{{ label }}</label>
+  <span ng-transclude></span>
+  <ul class="help-block list-unstyled" ng-show="input.$error.length">
+    <li ng-repeat="error in input.$error">{{ error }}</li>
+  </ul>
+</div>
