@@ -9,5 +9,5 @@ class CategoryViewSet(ModelViewSet):
 
 
 class ArticleViewSet(ModelViewSet):
-    model = models.Category
+    model = models.Article
     serializer_class = serializers.ArticleSerializer
